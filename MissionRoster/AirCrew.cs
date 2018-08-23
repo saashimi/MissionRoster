@@ -21,9 +21,9 @@ namespace MissionRoster
 
         public void PrintCrew()
         {
-            foreach (PersonnelRoster crewman in aircrew)
+            foreach (PersonnelRoster crew in aircrew)
             {
-                Console.WriteLine(crewman);
+                crew.PrintRoster();
             }
         }
         // Initialize the variable `airCrewRoster`

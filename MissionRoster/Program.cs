@@ -14,7 +14,6 @@ namespace MissionRoster
             person.AddSurname("Misaki");
             person.AddFirstName("Shin");
             person.AddCallsign("Cheezit");
-            person.PrintRoster();
             AirCrew aircrew = new AirCrew();
             aircrew.AddCrew(person);
             aircrew.PrintCrew();
