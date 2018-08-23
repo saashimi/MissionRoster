@@ -12,32 +12,32 @@ namespace MissionRoster
         // Want this to be instantiable 
         public AirCrew()
         {
-            aircrew = new List<PersonnelRoster>();
+            aircrew = new Dictionary<string, PersonnelRoster>();
         }
 
-        public void AddCrew(PersonnelRoster crewman)
+        public void AddCrew(string crewid, PersonnelRoster crewman)
         {
-            aircrew.Add(crewman);
+            aircrew.Add(crewid, crewman);
         }
 
         public void PrintCrew()
         {
-            foreach (PersonnelRoster crew in aircrew)
+            foreach(KeyValuePair<string, PersonnelRoster> crew in aircrew)
             {
-                crew.PrintRoster();
+                crew.Value.PrintRoster();
             }
         }
         public void SaveCrew()
         {
             StreamWriter file = new StreamWriter("personnel.txt");
-            foreach (PersonnelRoster crew in aircrew)
+            foreach(KeyValuePair<string, PersonnelRoster> crew in aircrew)
             {
-                crew.SaveRoster(file);
+                crew.Value.SaveRoster(file);
             }
             file.Close();
         }
 
         // Initialize the variable `airCrewRoster`
-        public List<PersonnelRoster> aircrew;
+        public Dictionary<string, PersonnelRoster> aircrew;
     }
 }

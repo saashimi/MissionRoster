@@ -14,13 +14,15 @@ namespace MissionRoster
             person.AddSurname("Misaki");
             person.AddFirstName("Shin");
             person.AddCallsign("Cheezit");
+            person.AddRole("Pilot");
             PersonnelRoster person2 = new PersonnelRoster();
             person2.AddSurname("Chang");
             person2.AddFirstName("Kara");
             person2.AddCallsign("Flucky");
+            person2.AddRole("WSO");
             AirCrew aircrew = new AirCrew();
-            aircrew.AddCrew(person);
-            aircrew.AddCrew(person2);
+            aircrew.AddCrew("111A", person);
+            aircrew.AddCrew("111B", person2);
             aircrew.PrintCrew();
             aircrew.SaveCrew();
         }

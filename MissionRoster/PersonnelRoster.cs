@@ -30,6 +30,11 @@ namespace MissionRoster
             crewman.Add("Callsign", callsign);
         }
 
+        public void AddRole(string role)
+        {
+            crewman.Add("Role", role);
+        }
+
         public void PrintRoster()
         {
             foreach(KeyValuePair<string, string> kvp in crewman)
