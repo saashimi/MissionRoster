@@ -10,11 +10,14 @@ namespace MissionRoster
     {
         static void Main(string[] args)
         {
-            AirCrewRoster person = new AirCrewRoster();
+            PersonnelRoster person = new PersonnelRoster();
             person.AddSurname("Misaki");
             person.AddFirstName("Shin");
             person.AddCallsign("Cheezit");
             person.PrintRoster();
+            AirCrew aircrew = new AirCrew();
+            aircrew.AddCrew(person);
+            aircrew.PrintCrew();
         }
     }
 }

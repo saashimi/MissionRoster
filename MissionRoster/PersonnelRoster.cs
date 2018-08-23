@@ -1,42 +1,44 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace MissionRoster
 {
-    class AirCrewRoster
+    class PersonnelRoster
     {
         // Want this to be instantiable 
-        public AirCrewRoster()
+        public PersonnelRoster()
         {
-            airCrewRoster = new Dictionary<string, string>();
+            crewman = new Dictionary<string, string>();
         }
 
         public void AddSurname(string surname)
         {
-            airCrewRoster.Add("Surname", surname);
+            crewman.Add("Surname", surname);
         }
 
         public void AddFirstName(string firstName)
         {
-            airCrewRoster.Add("First Name", firstName);
+            crewman.Add("First Name", firstName);
         }
 
         public void AddCallsign(string callsign)
         {
-            airCrewRoster.Add("Callsign", callsign);
+            crewman.Add("Callsign", callsign);
         }
 
         public void PrintRoster()
         {
-            foreach(KeyValuePair<string, string> kvp in airCrewRoster)
+            foreach(KeyValuePair<string, string> kvp in crewman)
             {
                 Console.WriteLine("{0} : {1}", kvp.Key, kvp.Value);
             }
         }
+
         // Initialize the variable `airCrewRoster`
-        public Dictionary<string, string> airCrewRoster;
+        public Dictionary<string, string> crewman;
     }
 }
