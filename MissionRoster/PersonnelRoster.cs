@@ -37,6 +37,13 @@ namespace MissionRoster
                 Console.WriteLine("{0} : {1}", kvp.Key, kvp.Value);
             }
         }
+        public void SaveRoster(StreamWriter file)
+        {
+            foreach (KeyValuePair<string, string> kvp in crewman)
+            {
+                file.WriteLine("{0} : {1}", kvp.Key, kvp.Value);
+            }
+        }
 
         // Initialize the variable `airCrewRoster`
         public Dictionary<string, string> crewman;
