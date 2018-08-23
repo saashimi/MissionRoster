@@ -24,6 +24,7 @@ namespace MissionRoster
         {
             foreach(KeyValuePair<string, PersonnelRoster> crew in aircrew)
             {
+                Console.WriteLine(crew.Key);
                 crew.Value.PrintRoster();
             }
         }
