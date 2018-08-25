@@ -19,20 +19,19 @@ namespace MissionRoster
             };
             AirCrew aircrew = new AirCrew();
             aircrew.AddCrew(person);
-            aircrew.SaveCrew();
-            
-            /*
-            PersonnelRoster person2 = new PersonnelRoster();
-            person2.AddSurname("Chang");
-            person2.AddFirstName("Kara");
-            person2.AddCallsign("Flucky");
-            person2.AddRole("WSO");
-            AirCrew aircrew = new AirCrew();
-            aircrew.AddCrew("111A", person);
-            aircrew.AddCrew("111B", person2);
+
+            Personnel person2 = new Personnel
+            {
+                Surname = "Chang",
+                FirstName = "Kara",
+                Callsign = "Flucky",
+                Role = "WSO"
+            };
+
+            aircrew.AddCrew(person2);
             aircrew.PrintCrew();
             aircrew.SaveCrew();
-            */
+
         }
     }
 }
