@@ -10,39 +10,19 @@ namespace MissionRoster
 {
     class Personnel
     {
-        private string _surname;
-        public string Surname
-        {
-            get { return _surname; }
-            set { _surname = value; }
-        }
-
-        private string _firstName;
-        public string FirstName
-        {
-            get { return _firstName; }
-            set { _firstName = value; }
-        }
-
-        private string _callsign;
-        public string Callsign
-        {
-            get { return _callsign; }
-            set { _callsign = value; }
-        }
-
-        private string _role;
-        public string Role
-        {
-            get { return _role; }
-            set { _role = value; }
-        }
+        public string Surname { get; set; }
+        public string FirstName { get; set; }
+        public string Callsign { get; set; }
+        public string Role { get; set; }
   
         public void PrintPersonnel()
         {
             foreach (PropertyInfo prop in GetType().GetProperties())
             {
-                Console.WriteLine("{0} : {1}", prop.Name, prop.GetValue(this, null));
+                Console.WriteLine(
+                    "{0} : {1}", 
+                    prop.Name, 
+                    prop.GetValue(this, null));
             }
         }
         
@@ -50,7 +30,10 @@ namespace MissionRoster
         {
             foreach (PropertyInfo prop in GetType().GetProperties())
             {
-                file.WriteLine("{0} : {1}", prop.Name, prop.GetValue(this, null));
+                file.WriteLine(
+                    "{0} : {1}", 
+                    prop.Name, 
+                    prop.GetValue(this, null));
             }
         }
 
